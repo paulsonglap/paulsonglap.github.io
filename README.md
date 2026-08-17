@@ -1,4 +1,4 @@
-# Songlap — Photography Portfolio
+# Songlap — Photography Website
 
 Static site. No build step, no framework — plain HTML, CSS, and vanilla JS.
 Deploys directly to GitHub Pages from the repo root.
@@ -248,10 +248,8 @@ then visit `http://localhost:8000/`.
 
 ## Deployment
 
-Push to the `songlap/songlap.github.io` repo's default branch — GitHub
-Pages serves the root automatically for a `<user>.github.io` repo, no
-config needed. `robots.txt` and `sitemap.xml` already point at
-`https://songlap.github.io`, and list all three pages.
+Push to the `paulsonglap/paulsonglap-com` repo's default branch. `robots.txt` and `sitemap.xml` already point at
+`https://paulsonglap.com`, and list all three pages.
 
 ## Notable decisions made while building this
 
