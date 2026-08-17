@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SONGLAP - A photo gallery</title>
+<meta name="description" content="Lights of every moment, for every moment by SONGLAP. A gallery of phtographs.">
+<meta name="theme-color" content="#12131a">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="images/brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="canonical" href="https://paulsonglap.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="SONGLAP - A photo gallery">
+<meta property="og:description" content="Lights of every moment, for every moment by SONGLAP. A gallery of phtographs.">
+<meta property="og:image" content="https://paulsonglap.com/images/hero/hero-04.webp">
+<meta property="og:url" content="https://paulsonglap.com/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Hanken+Grotesk:ital,wght@0,400..700;1,400..700&amp;display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/main.css">
+<style>@view-transition { navigation: auto; }</style>
+</head>
+<body>
+<div id="cursor" aria-hidden="true"></div>
+
+<header class="site-header">
+  <a class="brand" href="./">
+    <img src="images/brand/songlap-logo-full.png" alt="Songlap" width="424" height="467">
+  </a>
+  <div class="header-actions">
+    <a class="btn btn--solid magnetic" href="./contact/">Get in Touch</a>
+    <a class="btn btn--solid magnetic" href="./community/">Now-a-days...</a>
+  </div>
+</header>
+
+<nav class="side-nav" aria-label="Section navigation">
+  <div class="side-nav__item" data-target="hero-top">
+    <a class="side-nav__link" href="#hero-top" aria-label="Top">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 2v4M10 14v4M2 10h4M14 10h4M4.6 4.6l2.7 2.7M12.7 12.7l2.7 2.7M4.6 15.4l2.7-2.7M12.7 7.3l2.7-2.7"/></svg>
+    </a>
+    <span class="side-nav__label">Top</span>
+  </div>
+  <div class="side-nav__item" data-target="animal">
+    <a class="side-nav__link" href="#animal" aria-label="Animal gallery">
+      <svg viewBox="0 0 20 20" fill="currentColor"><ellipse cx="10" cy="13.5" rx="4.2" ry="3.4"/><circle cx="5" cy="6.8" r="1.9"/><circle cx="10" cy="4.6" r="1.9"/><circle cx="15" cy="6.8" r="1.9"/></svg>
+    </a>
+    <span class="side-nav__label">Animal</span>
+  </div>
+  <div class="side-nav__item" data-target="celestial">
+    <a class="side-nav__link" href="#celestial" aria-label="Celestial gallery">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M13.5 3.5a7 7 0 1 0 0 13 8.5 8.5 0 0 1 0-13z"/></svg>
+    </a>
+    <span class="side-nav__label">Celestial</span>
+  </div>
+  <div class="side-nav__item" data-target="clouds">
+    <a class="side-nav__link" href="#clouds" aria-label="Clouds gallery">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"><path d="M5.5 14.5a3.2 3.2 0 0 1-.4-6.4 4.3 4.3 0 0 1 8.3-1.3 3.4 3.4 0 0 1-.4 7.7z"/></svg>
+    </a>
+    <span class="side-nav__label">Clouds</span>
+  </div>
+  <div class="side-nav__item" data-target="entoma">
+    <a class="side-nav__link" href="#entoma" aria-label="Entoma gallery">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="10" y1="4" x2="10" y2="16"/><ellipse cx="6.2" cy="8" rx="3.4" ry="2.4" transform="rotate(-20 6.2 8)"/><ellipse cx="13.8" cy="8" rx="3.4" ry="2.4" transform="rotate(20 13.8 8)"/><ellipse cx="6.6" cy="13" rx="2.6" ry="1.8" transform="rotate(-15 6.6 13)"/><ellipse cx="13.4" cy="13" rx="2.6" ry="1.8" transform="rotate(15 13.4 13)"/></svg>
+    </a>
+    <span class="side-nav__label">Entoma</span>
+  </div>
+  <div class="side-nav__item" data-target="feathers">
+    <a class="side-nav__link" href="#feathers" aria-label="Feathers gallery">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3c-7 0-11.5 4.5-12.5 11.5M16 3 4.2 14.8M16 3 9 7M13.5 5.5 8 8.5M11 8 6.5 10.2"/></svg>
+    </a>
+    <span class="side-nav__label">Feathers</span>
+  </div>
+  <div class="side-nav__item" data-target="green">
+    <a class="side-nav__link" href="#green" aria-label="Green gallery">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"><path d="M15.5 4.5c.8 6-2.7 10.5-8.8 11C6 9.8 8.8 5.6 15.5 4.5z"/><path d="M7 15c1-3 3-6 8-9.5"/></svg>
+    </a>
+    <span class="side-nav__label">Green</span>
+  </div>
+  <div class="side-nav__item" data-target="horizon">
+    <a class="side-nav__link" href="#horizon" aria-label="Horizon gallery">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="2.5" y1="14" x2="17.5" y2="14"/><path d="M5.5 14a4.5 4.5 0 0 1 9 0"/></svg>
+    </a>
+    <span class="side-nav__label">Horizon</span>
+  </div>
+  <div class="side-nav__item" data-target="life">
+    <a class="side-nav__link" href="#life" aria-label="Life gallery">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10h3.2l1.8-4.5 3 9 1.8-4.5H18"/></svg>
+    </a>
+    <span class="side-nav__label">Life</span>
+  </div>
+  <div class="side-nav__item" data-target="shapes">
+    <a class="side-nav__link" href="#shapes" aria-label="Shapes gallery">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5"/><rect x="9" y="9" width="8" height="8"/></svg>
+    </a>
+    <span class="side-nav__label">Shapes</span>
+  </div>
+  <div class="side-nav__item">
+    <a class="side-nav__link" href="./contact/" aria-label="Contact">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="2.5" y="4.5" width="15" height="11" rx="1.5"/><path d="M3 5.5l7 5.5 7-5.5"/></svg>
+    </a>
+    <span class="side-nav__label">Contact</span>
+  </div>
+</nav>
+
+<main>
+  <section class="hero" id="hero-top" aria-label="Hero showcase">
+    <div class="slideshow" data-slideshow>
+      <img class="slideshow__slide is-active" fetchpriority="high" src="images/hero/hero-01.webp" alt="SONGLAP" width="2400" height="1600">
+      <img class="slideshow__slide" loading="lazy" src="images/hero/hero-02.webp" alt="SONGLAP" width="2400" height="1800">
+      <img class="slideshow__slide" loading="lazy" src="images/hero/hero-03.webp" alt="SONGLAP" width="2400" height="2400">
+      <img class="slideshow__slide" loading="lazy" src="images/hero/hero-04.webp" alt="SONGLAP" width="2400" height="1600">
+      <img class="slideshow__slide" loading="lazy" src="images/hero/hero-05.webp" alt="SONGLAP" width="2400" height="1600">
+      <img class="slideshow__slide" loading="lazy" src="images/hero/hero-06.webp" alt="SONGLAP" width="2400" height="1600">
+      <img class="slideshow__slide" loading="lazy" src="images/hero/hero-07.webp" alt="SONGLAP" width="2400" height="1350">
+      <img class="slideshow__slide" loading="lazy" src="images/hero/hero-08.webp" alt="SONGLAP" width="2400" height="1799">
+      <img class="slideshow__slide" loading="lazy" src="images/hero/hero-09.webp" alt="SONGLAP" width="2400" height="1350">
+      <img class="slideshow__slide" loading="lazy" src="images/hero/hero-10.webp" alt="SONGLAP" width="2400" height="1600">
+    </div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <div class="hero__content glass">
+      <span class="eyebrow">Look From My Eyes</span>
+      <h1 class="headline-display">SONGLAP</h1>
+      <p class="body-lg">Lights of every moment</p>
+    </div>
+    <div class="hero__scroll-cue" aria-hidden="true">
+      <svg viewBox="0 0 14 22" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1" y="1" width="12" height="20" rx="6"/><line x1="7" y1="6" x2="7" y2="11" stroke-linecap="round"/></svg>
+    </div>
+  </section>
+
+<section id="animal" class="gallery-section" aria-labelledby="animal-heading" data-sidebar-section="animal">
+  <div class="gallery-section__reveal">
+    <div class="gallery-section__inner">
+      <div class="gallery-section__head">
+        <span class="gallery-section__count">01 / 09</span>
+        <h2 id="animal-heading" class="gallery-section__title">Animal</h2>
+        <div class="gallery-section__rule" aria-hidden="true"></div>
+      </div>
+      <div class="masonry-grid">
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/animal/drawn-to-the-light.webp" alt="A mouse on a bare wooden floor approaching a lit bulb lamp, black and white" width="1350" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Drawn to the Light</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/animal/side-glance.webp" alt="A cat in profile portrait under dramatic side lighting, black and white" width="1350" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Side Glance</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/animal/whisker-study.webp" alt="Close-up black and white portrait of a cat's face and whiskers" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Whisker Study</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/animal/rooftop-family.webp" alt="A mother cat nursing kittens on a corrugated tin roof" width="1800" height="1440" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Rooftop Family</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/animal/the-elder.webp" alt="Black and white close portrait of an old macaque's face" width="1800" height="1349" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">The Elder</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--wide" tabindex="0">
+          <img src="images/gallery/animal/night-watch.webp" alt="Two black cats sitting on a tin roof at night, eyes catching the light" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Night Watch</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/animal/little-wanderer.webp" alt="Portrait of a baby monkey against a soft teal background" width="1350" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Little Wanderer</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/animal/curled-together.webp" alt="Two fluffy white kittens curled up together in ferns" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Curled Together</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/animal/curious-calico.webp" alt="A calico kitten looking upward beside a large green leaf" width="1800" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Curious Calico</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="celestial" class="gallery-section" aria-labelledby="celestial-heading" data-sidebar-section="celestial">
+  <div class="gallery-section__reveal">
+    <div class="gallery-section__inner">
+      <div class="gallery-section__head">
+        <span class="gallery-section__count">02 / 09</span>
+        <h2 id="celestial-heading" class="gallery-section__title">Celestial</h2>
+        <div class="gallery-section__rule" aria-hidden="true"></div>
+      </div>
+      <div class="masonry-grid">
+        <figure class="gallery-item gallery-item--wide" tabindex="0">
+          <img src="images/gallery/celestial/ember-horizon.webp" alt="A deep red sun setting over a silhouetted treeline with birds in flight" width="1800" height="1012" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Ember Horizon</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/celestial/milky-way-treeline.webp" alt="The Milky Way over a dark treeline at night" width="1350" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Milky Way, Treeline</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/celestial/crossing-the-moon.webp" alt="A full moon in a grey sky with a bird flying past" width="1800" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Crossing the Moon</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/celestial/palms-at-dusk.webp" alt="A red sunset behind silhouetted palm trees" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Palms at Dusk</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/celestial/crescent.webp" alt="A crescent moon in a starry night sky" width="1507" height="1507" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Crescent</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/celestial/sunset-palm-frond.webp" alt="The sun setting behind a silhouetted palm frond" width="1350" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Sunset, Palm Frond</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/celestial/blood-moon.webp" alt="A close view of a red total lunar eclipse" width="1800" height="1799" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Blood Moon</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/celestial/moonrise-over-the-rail.webp" alt="A golden full moon rising behind a railing" width="1799" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Moonrise Over the Rail</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/celestial/half-hidden.webp" alt="The moon partly hidden behind glowing clouds" width="1350" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Half Hidden</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/celestial/red-sun-bare-branches.webp" alt="A hazy red sun behind bare silhouetted branches" width="1350" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Red Sun, Bare Branches</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="clouds" class="gallery-section" aria-labelledby="clouds-heading" data-sidebar-section="clouds">
+  <div class="gallery-section__reveal">
+    <div class="gallery-section__inner">
+      <div class="gallery-section__head">
+        <span class="gallery-section__count">03 / 09</span>
+        <h2 id="clouds-heading" class="gallery-section__title">Clouds</h2>
+        <div class="gallery-section__rule" aria-hidden="true"></div>
+      </div>
+      <div class="masonry-grid">
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/clouds/tower-of-light.webp" alt="A tall cumulus cloud lit gold against a blue sky" width="1800" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Tower of Light</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/clouds/evening-swell.webp" alt="A cloud formation glowing at dusk" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Evening Swell</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/clouds/gold-ceiling.webp" alt="Layered golden clouds lit by low sun" width="1800" height="1350" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Gold Ceiling</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/clouds/fair-weather.webp" alt="White clouds in a blue sky with a small bird" width="1800" height="1350" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Fair Weather</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/clouds/furnace-cloud.webp" alt="A glowing orange storm cloud against a dark sky" width="1350" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Furnace Cloud</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--wide" tabindex="0">
+          <img src="images/gallery/clouds/soft-giant.webp" alt="A warm-toned cloud formation in soft light" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Soft Giant</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/clouds/rising-column.webp" alt="A tall white cloud billowing against a blue sky" width="1800" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Rising Column</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="entoma" class="gallery-section" aria-labelledby="entoma-heading" data-sidebar-section="entoma">
+  <div class="gallery-section__reveal">
+    <div class="gallery-section__inner">
+      <div class="gallery-section__head">
+        <span class="gallery-section__count">04 / 09</span>
+        <h2 id="entoma-heading" class="gallery-section__title">Entoma</h2>
+        <div class="gallery-section__rule" aria-hidden="true"></div>
+      </div>
+      <div class="masonry-grid">
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/entoma/dragonfly-silhouette.webp" alt="A dragonfly silhouetted on a wire fence" width="1800" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Dragonfly Silhouette</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/entoma/fly-on-blossom.webp" alt="A fly resting on a flower bud" width="1349" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Fly on Blossom</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/entoma/compound-eyes.webp" alt="Close-up portrait of a fly's compound eyes" width="1176" height="1176" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Compound Eyes</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/entoma/green-climber.webp" alt="A green grasshopper climbing a stem" width="1350" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Green Climber</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/entoma/perched-against-blue.webp" alt="A dragonfly perched on a twig against blue sky" width="1350" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Perched Against Blue</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/entoma/mantis-at-work.webp" alt="A praying mantis feeding, close macro shot" width="1800" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Mantis at Work</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/entoma/mustard-field-forager.webp" alt="A bee among yellow mustard flowers" width="1800" height="1350" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Mustard Field Forager</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/entoma/wings-folded.webp" alt="A red and white butterfly hanging from a leaf" width="1200" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Wings Folded</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/entoma/sunlit-trail.webp" alt="An ant on a blade of grass with a light flare" width="1799" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Sunlit Trail</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/entoma/the-weavers.webp" alt="A trail of red weaver ants crossing bark" width="1563" height="1564" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">The Weavers</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/entoma/meeting-point.webp" alt="Two ants on a twig with colourful bokeh background" width="1800" height="1350" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Meeting Point</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="feathers" class="gallery-section" aria-labelledby="feathers-heading" data-sidebar-section="feathers">
+  <div class="gallery-section__reveal">
+    <div class="gallery-section__inner">
+      <div class="gallery-section__head">
+        <span class="gallery-section__count">05 / 09</span>
+        <h2 id="feathers-heading" class="gallery-section__title">Feathers</h2>
+        <div class="gallery-section__rule" aria-hidden="true"></div>
+      </div>
+      <div class="masonry-grid">
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/feathers/golden-eyes.webp" alt="Close portrait of a hawk-eagle looking at the camera" width="1227" height="1636" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Golden Eyes</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/feathers/crow-in-flight.webp" alt="A crow in flight, black and white, wings spread" width="1800" height="1351" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Crow in Flight</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/feathers/woodpecker-pair.webp" alt="Two woodpeckers on a tree trunk" width="1230" height="1641" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Woodpecker Pair</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/feathers/open-sky.webp" alt="A bird of prey flying against a blue sky with clouds" width="1800" height="1799" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Open Sky</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/feathers/fence-line.webp" alt="Black and white silhouette of a bird perched on a fence" width="1200" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Fence Line</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/feathers/wired-at-sunset.webp" alt="A small bird on a wire silhouetted against the setting sun" width="1800" height="1441" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Wired at Sunset</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/feathers/bulbul-on-red.webp" alt="A red-vented bulbul perched on a branch" width="1350" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Bulbul on Red</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/feathers/the-gathering.webp" alt="A flock of birds gathered on a wall, black and white" width="1800" height="1350" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">The Gathering</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/feathers/in-a-row.webp" alt="A row of small birds perched along a ledge" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">In a Row</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/feathers/pillar-at-sundown.webp" alt="A bird silhouetted on a pillar at sunset" width="1201" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Pillar at Sundown</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/feathers/post-and-sky.webp" alt="A bird perched on a post against a pastel sunset sky" width="964" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Post and Sky</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/feathers/two-on-a-branch.webp" alt="Two bulbuls perched together on a branch" width="1800" height="1799" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Two on a Branch</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/feathers/wingbeat.webp" alt="A crow captured mid-flight, black and white" width="1800" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Wingbeat</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/feathers/blue-on-red.webp" alt="A blue Indian roller perched on red posts" width="1800" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Blue on Red</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/feathers/warbler-in-gold.webp" alt="A small yellow bird among green leaves in golden light" width="1800" height="1350" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Warbler in Gold</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/feathers/bare-branches.webp" alt="Black and white silhouette of a bird among bare branches" width="1800" height="1799" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Bare Branches</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--wide" tabindex="0">
+          <img src="images/gallery/feathers/homeward-at-dusk.webp" alt="Birds flying home at sunset, golden silhouettes" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Homeward at Dusk</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="green" class="gallery-section" aria-labelledby="green-heading" data-sidebar-section="green">
+  <div class="gallery-section__reveal">
+    <div class="gallery-section__inner">
+      <div class="gallery-section__head">
+        <span class="gallery-section__count">06 / 09</span>
+        <h2 id="green-heading" class="gallery-section__title">Green</h2>
+        <div class="gallery-section__rule" aria-hidden="true"></div>
+      </div>
+      <div class="masonry-grid">
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/green/after-the-rain.webp" alt="Dew drops on a dark green leaf, close-up" width="1014" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">After the Rain</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/green/the-avenue.webp" alt="A tree-lined avenue path in golden light" width="1350" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">The Avenue</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/green/canopy-light.webp" alt="Looking up through an autumn canopy toward the sun" width="1800" height="1350" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Canopy Light</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/green/quiet-stem.webp" alt="A small plant stem lit softly against a dark background" width="1200" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Quiet Stem</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/green/rooftop-rain.webp" alt="Rain on a tin roof seen through green leaves" width="1350" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Rooftop Rain</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/green/backlit.webp" alt="A small backlit plant against warm bokeh light" width="1013" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Backlit</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/green/leaf-pattern.webp" alt="Leaves backlit against a bright sky" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Leaf Pattern</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/green/canopy-and-roof.webp" alt="Aerial view of a dense forest canopy with a hut below" width="1350" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Canopy and Roof</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/green/fern-in-blue.webp" alt="Green fern leaves with soft blue bokeh" width="1800" height="1013" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Fern in Blue</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--wide" tabindex="0">
+          <img src="images/gallery/green/forest-light.webp" alt="Sunbeams filtering through a misty forest" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Forest Light</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/green/morning-meadow.webp" alt="A misty meadow with a large tree at dawn" width="1800" height="1492" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Morning Meadow</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/green/the-climb.webp" alt="A vine climbing a tree trunk, macro with blue bokeh" width="1349" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">The Climb</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="horizon" class="gallery-section" aria-labelledby="horizon-heading" data-sidebar-section="horizon">
+  <div class="gallery-section__reveal">
+    <div class="gallery-section__inner">
+      <div class="gallery-section__head">
+        <span class="gallery-section__count">07 / 09</span>
+        <h2 id="horizon-heading" class="gallery-section__title">Horizon</h2>
+        <div class="gallery-section__rule" aria-hidden="true"></div>
+      </div>
+      <div class="masonry-grid">
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/horizon/evening-sky.webp" alt="A sunset sky with wispy clouds and a silhouetted tree" width="1350" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Evening Sky</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/horizon/lightning-over-the-river.webp" alt="Purple lightning striking over a city skyline and river" width="1800" height="1440" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Lightning Over the River</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/horizon/strike.webp" alt="A lightning bolt in a dark stormy sky" width="1013" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Strike</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/horizon/boat-in-the-fog.webp" alt="A wooden boat emerging from thick river fog" width="1800" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Boat in the Fog</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/horizon/the-line-ahead.webp" alt="Black and white railway tracks vanishing into the distance" width="1800" height="1797" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">The Line Ahead</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/horizon/watching-the-sun-go-down.webp" alt="A bird perched on a branch silhouetted against a pink sunset" width="1800" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Watching the Sun Go Down</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/horizon/rays-through-grey.webp" alt="Black and white sunbeams breaking through storm clouds" width="1200" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Rays Through Grey</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/horizon/storm-light.webp" alt="Dramatic black and white light rays over silhouetted palms" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Storm Light</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--wide" tabindex="0">
+          <img src="images/gallery/horizon/burning-hills.webp" alt="A fiery orange sunset over hazy hills" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Burning Hills</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--wide" tabindex="0">
+          <img src="images/gallery/horizon/river-and-tower.webp" alt="A river landscape with a water tower under a blue sky" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">River and Tower</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/horizon/layers-of-fire.webp" alt="Layered orange storm clouds at sunset" width="1012" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Layers of Fire</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/horizon/through-the-trees.webp" alt="Golden sunlight breaking through trees" width="1200" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Through the Trees</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/horizon/grazing-light.webp" alt="A hazy landscape with grazing cattle at dusk" width="1800" height="1350" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Grazing Light</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/horizon/bare-branch-gold-sky.webp" alt="A bare tree branch silhouetted against a golden sky" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Bare Branch, Gold Sky</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/horizon/distant-ranges.webp" alt="Layered mountain ranges fading into blue haze" width="1800" height="1350" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Distant Ranges</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="life" class="gallery-section" aria-labelledby="life-heading" data-sidebar-section="life">
+  <div class="gallery-section__reveal">
+    <div class="gallery-section__inner">
+      <div class="gallery-section__head">
+        <span class="gallery-section__count">08 / 09</span>
+        <h2 id="life-heading" class="gallery-section__title">Life</h2>
+        <div class="gallery-section__rule" aria-hidden="true"></div>
+      </div>
+      <div class="masonry-grid">
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/life/evening-swim.webp" alt="A person wading through reflective orange river water at sunset" width="1798" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Evening Swim</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/life/the-oarsman.webp" alt="Black and white photo of a boat and oarsman on a river" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">The Oarsman</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/life/city-on-the-horizon.webp" alt="A hazy distant cityscape under a large cloud" width="1800" height="1350" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">City on the Horizon</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/life/web-and-flare.webp" alt="A spider web lit by warm lens flare" width="1350" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Web and Flare</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/life/into-the-field.webp" alt="A person standing in a green rice field at dusk" width="1440" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Into the Field</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/life/kite.webp" alt="A red kite flying in a blue sky" width="1799" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Kite</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/life/handmade.webp" alt="Small handmade wooden folk-art dolls" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Handmade</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/life/the-craftsman-s-doll.webp" alt="A hatted wooden toy figure seated on a stool" width="1200" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">The Craftsman's Doll</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/life/under-the-trees.webp" alt="Black and white image of a wooden bench under dappled trees" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Under the Trees</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/life/morning-on-the-river.webp" alt="Boats and people on a river in the morning haze" width="1800" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Morning on the River</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/life/down-the-line.webp" alt="A person walking down railway tracks into the mist" width="1800" height="1305" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Down the Line</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/life/lantern-light.webp" alt="A lantern glowing warmly in a stone alcove" width="1351" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Lantern Light</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/life/drawn-to-the-lamp.webp" alt="A street lamp glowing at night with insects flying around it" width="1800" height="1698" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Drawn to the Lamp</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/life/working-by-lamplight.webp" alt="Black and white documentary shot of craftwork by lamplight" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Working by Lamplight</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--wide" tabindex="0">
+          <img src="images/gallery/life/crossing-at-blue-hour.webp" alt="A person walking across a river bridge at blue hour" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Crossing at Blue Hour</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/life/birds-over-the-chimney.webp" alt="Black and white birds flying over a silhouetted chimney" width="1800" height="1554" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Birds Over the Chimney</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/life/streetlight-fog.webp" alt="A streetlight glowing in foggy night air" width="1349" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Streetlight, Fog</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="shapes" class="gallery-section" aria-labelledby="shapes-heading" data-sidebar-section="shapes">
+  <div class="gallery-section__reveal">
+    <div class="gallery-section__inner">
+      <div class="gallery-section__head">
+        <span class="gallery-section__count">09 / 09</span>
+        <h2 id="shapes-heading" class="gallery-section__title">Shapes</h2>
+        <div class="gallery-section__rule" aria-hidden="true"></div>
+      </div>
+      <div class="masonry-grid">
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/shapes/dome-geometry.webp" alt="Symmetrical view straight up into a carved dome ceiling" width="1800" height="1350" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Dome Geometry</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/shapes/the-old-door.webp" alt="A weathered building facade with a door and shuttered windows" width="1800" height="1316" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">The Old Door</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/shapes/through-the-archway.webp" alt="An archway leading toward a lit doorway" width="1015" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Through the Archway</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/shapes/smoke-study-i.webp" alt="Abstract curling smoke against a black background" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Smoke Study I</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/shapes/smoke-study-ii.webp" alt="Abstract swirling smoke forming a circular shape" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Smoke Study II</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--wide" tabindex="0">
+          <img src="images/gallery/shapes/smoke-study-iii.webp" alt="Abstract smoke rising and twisting" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Smoke Study III</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/shapes/smoke-study-iv.webp" alt="Abstract looping curls of smoke" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Smoke Study IV</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/shapes/smoke-study-v.webp" alt="Abstract smoke forming a swirling knot" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Smoke Study V</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/shapes/smoke-study-vi.webp" alt="Abstract smoke twisting in a chain-like pattern" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Smoke Study VI</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--wide" tabindex="0">
+          <img src="images/gallery/shapes/terracotta-domes.webp" alt="A terracotta domed temple against a blue sky" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Terracotta Domes</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/shapes/domes-at-golden-hour.webp" alt="A domed temple lit by golden hour light" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Domes at Golden Hour</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/shapes/perched-on-the-candelabra.webp" alt="An ornamental candelabra silhouette with a bird perched on top" width="1800" height="1350" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Perched on the Candelabra</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/shapes/the-colonnade.webp" alt="A temple facade with an arched colonnade" width="1800" height="1200" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">The Colonnade</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/shapes/tiled-roofline.webp" alt="Textured clay roof tiles among green foliage" width="1800" height="1350" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Tiled Roofline</figcaption>
+        </figure>
+        <figure class="gallery-item" tabindex="0">
+          <img src="images/gallery/shapes/many-hands.webp" alt="Black and white statue of a many-armed deity" width="1350" height="1800" loading="lazy" decoding="async">
+          <figcaption class="gallery-item__overlay">Many Hands</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <a class="site-footer__brand" href="./">
+      <img src="images/brand/songlap-mark.png" alt="" width="401" height="436">
+      <span>Songlap</span>
+    </a>
+    <div class="site-footer__meta">
+      <ul data-social-list></ul>
+      <small>&copy; 2026 Songlap. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

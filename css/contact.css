@@ -1,0 +1,76 @@
+/* ==========================================================================
+   contact.css — page-specific overrides for /contact/. Loaded in addition
+   to main.css. Keeps this page visually calmer than the homepage per the
+   project brief: a single reveal-on-load, no parallax, no side nav.
+   ========================================================================== */
+
+/* Muted hero background: same slideshow images/mechanism as the homepage,
+   but dimmed and desaturated so the glass card stays the clear focal
+   point and the page reads as the calm "landing" moment after browsing. */
+.hero--muted .slideshow__slide {
+  filter: grayscale(55%) brightness(0.55);
+}
+
+.hero--muted .hero__scrim {
+  background: linear-gradient(to bottom, rgba(10, 10, 12, 0.55), rgba(10, 10, 12, 0.78));
+}
+
+.contact-card {
+  position: relative;
+  z-index: 2;
+  max-width: 56rem;
+  width: 100%;
+  padding: clamp(2rem, 5vw, 4rem);
+  text-align: center;
+}
+
+.contact-card .headline-display { margin-bottom: 1.25rem; }
+.contact-card .body-lg { max-width: 40rem; margin-inline: auto; }
+
+.contact-card__grid {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--glass-border);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .contact-card__grid { grid-template-columns: 1.4fr 1fr; gap: 3rem; }
+}
+
+.contact-card__block .eyebrow { display: block; margin-bottom: 1rem; }
+
+.contact-card__email {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.74rem, 3.24vw, 2.52rem); /* enlarged 1.2x from the original clamp(1.45rem, 2.7vw, 2.1rem) */
+  color: var(--on-surface);
+  word-break: break-word;
+  transition: color 0.3s ease;
+}
+
+.contact-card__email:hover { color: var(--primary); }
+
+.contact-card__note {
+  margin-top: 0.85rem;
+  font-size: 1.2968rem; /* enlarged 1.33x from the original 0.975rem */
+  color: var(--on-surface-variant);
+}
+
+/* Nudges the Social Presence column right of where the grid's own gap
+   would otherwise place it. */
+.contact-card__block--social {
+  padding-left: 2.75rem;
+}
+
+@media (max-width: 767px) {
+  .contact-card__block--social { padding-left: 0; }
+}
+
+/* Contact page reveal: a single, gentle reveal-on-load for the hero card
+   only — no parallax, no per-item staggering, matching the calmer brief
+   for this page. */
+.contact-page .side-nav { display: none !important; }
