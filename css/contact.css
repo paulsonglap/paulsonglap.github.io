@@ -15,6 +15,27 @@
   background: linear-gradient(to bottom, rgba(10, 10, 12, 0.55), rgba(10, 10, 12, 0.78));
 }
 
+/* Mobile only: .hero is normally a fixed 100svh box that vertically
+   centers its content — fine on tablet/desktop, where the two-column
+   grid below keeps .contact-card short. On mobile the grid collapses
+   to one column, the card gets taller than 100svh, and centering a
+   too-tall card inside an overflow:hidden box pushes its top out
+   behind the fixed header (.site-header is z-index 500, always above
+   <main>'s content) and clips its bottom off right where the footer
+   begins. Letting the hero grow to fit the card (height:auto with the
+   100svh floor kept as a minimum, not a cap) and padding it clear of
+   the header fixes both ends. padding-top matches the 9.8rem header-
+   clearance value #hero-top already uses on the homepage, since it's
+   the same fixed header on every page. */
+@media (max-width: 767px) {
+  .hero--muted {
+    height: auto;
+    min-height: 100svh;
+    padding-top: 9.8rem;
+    padding-bottom: 4rem;
+  }
+}
+
 .contact-card {
   position: relative;
   z-index: 2;
